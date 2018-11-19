@@ -1,0 +1,339 @@
+html,
+body {
+    font-family: $family-primary;
+    font-size: 15px;
+    overflow: hidden;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    color: $black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p, span , button, a , div , h1, h2 , h3 , h4, h5 {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+
+}
+
+p,
+h2,
+h3,
+h4,
+h5 {
+    -webkit-margin-before: 0.66rem;
+    -webkit-margin-after: 0.66rem;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: white;
+    background-repeat: repeat;
+    background-position: left top;
+    &.fixed {
+        overflow: hidden;
+    }
+}
+
+a {
+    &:hover {
+        font-style: normal;
+    }
+    &.energized {
+        &:hover {
+            color: $color-orange;
+        }
+    }
+}
+
+:focus {
+    outline: none;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+textarea,
+.input {
+    @include placeholder {
+        color: $color-gray;
+    }
+    font-family: inherit!important;
+    background-color: transparent;
+    border-bottom: 2px solid $primary;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -khtml-border-radius: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-style: normal;
+    font-weight: 500;
+    padding: 9px 5.5px;
+    box-shadow: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    &.bold,
+    .fw-700 {
+        font-weight: 700;
+    }
+    &.danger {
+        border-color: $color-red;
+    }
+    &[disabled] {
+        background-color: transparent;
+        color: $color-gray;
+        border-color: $color-gray;
+    }
+    // &:focus {
+    //     transition: all ease-in-out 0.4s;
+    //     border-color: $color-blue-light;
+    // }
+}
+
+.input-border {
+    border: 3px solid $color-gray-light;
+    border-radius: 5px;
+}
+
+select {
+    &.input {
+        height: 53px;
+    }
+}
+
+.button {
+    font-weight: 700;
+    line-height: 2.5rem;
+    cursor: pointer;
+    color: white;
+    border: none;
+    text-align: center;
+    // min-width: 100px;
+    &.primary {
+        background-color: $primary;
+    }
+    &.disabled,
+    &.disable {
+        background-color: $color-gray;
+    }
+}
+
+.button {
+    &.button-clear {
+        background-color: transparent;
+        min-width: auto;
+        &.primary {
+            color: $primary;
+        }
+    }
+    &.round-button {
+        min-width: 50px;
+        height: 50px;
+        box-shadow: $color-gray-dark 0px 3px 15px;
+    }
+}
+
+.button-small {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.button-flat {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.button-danger,
+.buttonDanger {
+    background-color: $color-red;
+    border: 2px solid $color-red;
+    color: $color-white;
+    text-shadow: 0 1px 1px $color-red-dark;
+    box-shadow: 0 3px 0px $color-red-dark;
+}
+
+.button-danger:hover {
+    border: 2px solid $color-red-light;
+    background-color: $color-red-light;
+    //transition: all 0.3s ease 0s;
+    //-webkit-transition: all 0.3s ease 0s;
+    color: $color-white;
+}
+
+.button-danger.activated,
+.button-danger.activated:hover,
+.button-danger:active {
+    background-color: $color-red-dark;
+    box-shadow: 0 0 0 transparent;
+    border: 2px solid $color-red-dark;
+    top: 3px;
+    position: relative;
+    color: $color-white;
+}
+
+.button-energized {
+    background-color: $color-orange;
+    border: 2px solid $color-orange;
+    color: $color-white;
+    text-shadow: 0 1px 1px $color-orange-darker;
+    box-shadow: 0 3px 0px $color-orange-darker;
+}
+
+.button-energized:hover {
+    border: 2px solid $color-orange-light;
+    background-color: $color-orange-light;
+    //transition: all 0.3s ease 0s;
+    //-webkit-transition: all 0.3s ease 0s;
+    color: $color-white;
+}
+
+.button-energized.activated,
+.button-energized.activated:hover,
+.button-energized:active {
+    background-color: $color-orange-darker;
+    box-shadow: 0 0 0 transparent;
+    border: 2px solid $color-orange-darker;
+    top: 3px;
+    position: relative;
+    color: $color-white;
+}
+
+.button-gray,
+.buttonGray {
+    background-color: #ECEBEB;
+    box-shadow: none;
+    color: #BFBEBE;
+}
+
+.button-blue,
+.buttonBlue {
+    background-color: $color-blue;
+    border: 2px solid $color-blue;
+    color: $color-white;
+    text-shadow: 0 1px 1px $color-blue-dark;
+    box-shadow: 0 3px 0px $color-blue-dark;
+}
+
+.button-blue:hover {
+    border: 2px solid $color-blue-light;
+    background-color: $color-blue-light;
+    //transition: all 0.3s ease 0s;
+    //-webkit-transition: all 0.3s ease 0s;
+    color: $color-white;
+}
+
+.button-blue.activated,
+.button-blue.activated:hover,
+.button-blue:active {
+    background-color: $color-blue-dark;
+    box-shadow: 0 0 0 transparent;
+    border: 2px solid $color-blue-dark;
+    color: $color-white;
+    top: 3px
+}
+
+.button-black,
+.buttonBlack {
+    background-color: $black;
+    border: 2px solid transparent;
+    color: $color-white;
+    text-shadow: 0 1px 1px $color-gray-darkest;
+    box-shadow: 0 3px 0px $color-gray-darker;
+}
+
+.button-black:hover {
+    border: 2px solid transparent;
+    background-color: $color-gray-darkest;
+    //transition: all 0.3s ease 0s;
+    //-webkit-transition: all 0.3s ease 0s;
+    color: $color-white;
+}
+
+.button-black.activated,
+.button-black.activated:hover,
+.button-black:active {
+    background-color: black;
+    box-shadow: 0 0 0 transparent;
+    border: 2px solid transparent;
+    color: $color-white;
+    top: 3px
+}
+
+.button-purple,
+.buttonPurple {
+    background-color: hsl(230, 35%, 45%);
+    border: 2px solid hsl(230, 35%, 45%);
+    color: $color-white;
+    text-shadow: 0 1px 1px $purple-dark;
+    box-shadow: 0 3px 0px $purple-dark;
+}
+
+.button-purple:hover {
+    border: 2px solid $purple-light;
+    background-color: $purple-light;
+    //transition: all 0.3s ease 0s;
+    //-webkit-transition: all 0.3s ease 0s;
+    color: $color-white;
+}
+
+.button-purple.activated,
+.button-purple.activated:hover,
+.button-purple:active {
+    background-color: $purple-dark;
+    box-shadow: 0 0 0 transparent;
+    border: 2px solid $purple-dark;
+    color: $color-white;
+    top: 3px
+}
+
+.form-control,
+.form-control-50,
+.form-control-25 {
+    display: inline-block;
+    outline: none;
+    box-sizing: border-box;
+    @include placeholder {
+        color: $color-gray;
+    }
+    &.danger {
+        @include placeholder {
+            color: $color-red;
+        }
+    }
+}
+
+.form-control {
+    width: 100%;
+}
+
+.form-control-50 {
+    width: 50%;
+}
+
+.form-control-25 {
+    width: 25%;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.underline-hover {
+    &:hover {
+        text-decoration: underline;
+    }
+}
